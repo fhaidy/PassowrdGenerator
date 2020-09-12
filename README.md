@@ -1,2 +1,2 @@
 # PassowrdGenerator
-Passowrd Generation (Node &amp; React)
+Passowrd Generation (Node e React)
