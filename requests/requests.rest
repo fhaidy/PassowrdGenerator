@@ -1,9 +1,0 @@
-http://localhost:3000/password
-content-type: application/json
-
-{
-    "passwordLength" : 20,
-    "upperCase" : true,
-    "lowerCase" : true,
-    "numbers" : true
-}

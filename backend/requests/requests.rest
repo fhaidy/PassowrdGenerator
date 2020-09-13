@@ -1,0 +1,7 @@
+POST http://localhost:2000/password
+content-type: application/json
+
+{
+    "passwordLength" : 20,
+    "upperCase" : true
+}

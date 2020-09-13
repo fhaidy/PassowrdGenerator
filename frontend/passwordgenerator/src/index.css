@@ -1,0 +1,16 @@
+html, body, #root, #root>div {
+  height: 100%;
+  margin: 0;
+}
+body {
+  min-height: 100%;
+  background: #C04848;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(72, 0, 72, 0.7), rgba(192, 72, 72, 0.7));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(72, 0, 72, 0.7), rgba(192, 72, 72, 0.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
