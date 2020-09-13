@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import InputGroup from 'react-bootstrap/InputGroup' 
 
 
 class App extends React.Component{
@@ -18,6 +19,7 @@ class App extends React.Component{
     };
      this.onChange = this.onChange.bind(this)
      this.onSubmit = this.onSubmit.bind(this)
+     this.copyToClipboard = this.copyToClipboard.bind(this)
   }
   onSubmit(e) {
     e.preventDefault();
@@ -38,6 +40,15 @@ class App extends React.Component{
      if (e.target.value === '' || re.test(e.target.value)) {
         this.setState({passwordLength: e.target.value})
      }
+  }
+
+  copyToClipboard(e){
+    var copyText = document.getElementById("passwordControl");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
   }
   
   render(){
@@ -63,11 +74,18 @@ class App extends React.Component{
                 <Form.Check name="symbols" type="checkbox" label="Conter Caracter Especiais" value='on'/>
               </Form.Group>
               <Button size="lg" block variant="success" type="submit">
-                Submit
+                Gerar Senha
               </Button>
               <Form.Group controlId="passwordControl">
                 <Form.Label>Sua Senha:</Form.Label>
-                <Form.Control name="password" type="text" min="0" max="99" maxLength="2" step="1" value={this.state.response} onChange={this.onChange}/>
+                <InputGroup>
+                <Form.Control name="password" type="text" min="0" max="99" maxLength="2" step="1" value={this.state.response} onChange={this.onChange} readOnly/>
+                  <InputGroup.Append>
+                    <Button id="btnGroupAddon" variant="success" onClick={this.copyToClipboard}>
+                      Copiar
+                    </Button>
+                  </InputGroup.Append>
+                </InputGroup>
               </Form.Group>
             </Form>
           </Card.Body>
