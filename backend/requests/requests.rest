@@ -1,7 +1,20 @@
-POST http://localhost:2000/password
+POST http://localhost:2000/api/password
 content-type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZHMiOltdLCJfaWQiOiI1ZjlmMDkwNjJmZTAwYTQyMTg4ZGU3MjkiLCJuYW1lIjoidGVzdGUiLCJwYXNzd29yZCI6IiQyYiQxMCQ3Uk41N1dndmVEcFNaTHlKSkJuY2x1STRWcFJSWnouT0dlOE5sbnNMQmo2am9uQThMMjhvVyIsIl9fdiI6MH0.e9c6_msU-6ZS8VLdmkjveHliOzHC1Wwfd23EENPOAKE
 
 {
     "passwordLength" : 20,
     "upperCase" : true
 }
+###
+POST  http://localhost:2000/api/authenticate HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=teste
+&password=teste
+###
+POST  http://localhost:2000/api/signup HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=teste
+&password=teste
